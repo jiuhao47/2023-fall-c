@@ -10,9 +10,8 @@ int main()
     char line[lim];
     printf("Enter a number:");
     scanf("%d", &n);
-    while (len = mygetline(line, lim) > 0)
+    while ((len = mygetline(line, lim)) > 0)
     {
-        printf("%d", len);
         if (len > n)
         {
             printf("%s", line);
@@ -23,7 +22,8 @@ int main()
 }
 int mygetline(char s[], int lim)
 {
-    int i, c;
+    int c;
+    int i;
     i = 0;
     while ((i < lim - 1) && ((c = getchar()) != EOF) && (c != '\n'))
     {
