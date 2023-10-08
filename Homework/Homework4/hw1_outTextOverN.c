@@ -54,7 +54,7 @@ void check_n(char s[], int lim, int n)
         {
             if (m > n)
             {
-                printf("%s", mid);
+                printf("Output: %s", mid);
                 clearchar(mid, lim);
             }
             m = 0;
