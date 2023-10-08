@@ -1,5 +1,7 @@
 #include <stdio.h>
-int mygetline(char s[], int lim);
+void mygetline(char s[]);
+void clearchar(char s[], int lim);
+void check_n(char s[], int lim, int n);
 int main()
 {
     int n;
@@ -10,31 +12,57 @@ int main()
     char line[lim];
     printf("Enter a number:");
     scanf("%d", &n);
-    while ((len = mygetline(line, lim)) > 0)
-    {
-        if (len > n)
-        {
-            printf("%s", line);
-        }
-    }
-
+    clearchar(line, lim);
+    mygetline(line);
+    // printf("%s", line);
+    // printf("%s", line);
+    check_n(line, lim, n);
     return 0;
 }
-int mygetline(char s[], int lim)
+void mygetline(char s[])
 {
     int c;
     int i;
     i = 0;
-    while ((i < lim - 1) && ((c = getchar()) != EOF) && (c != '\n'))
-    {
-        s[i] = c;
-        ++i;
-    }
-    if (c == '\n')
+    while ((c = getchar()) != EOF)
     {
         s[i] = c;
         ++i;
     }
     s[i] = '\0';
-    return i;
+}
+
+void clearchar(char s[], int lim)
+{
+    for (int j = 0; j < lim; j++)
+    {
+        s[j] = '\0';
+    }
+}
+void check_n(char s[], int lim, int n)
+{
+    char mid[lim];
+    clearchar(mid, lim);
+    int k, m;
+    k = 0;
+    m = 0;
+    while ((k < lim) && (s[k] != '\0'))
+    {
+        mid[m] = s[k];
+        // printf("string:%s,m=%d,n=%d,k=%d,\n", mid, m, n, k);
+        if ((mid[m] == '\n'))
+        {
+            if (m > n)
+            {
+                printf("%s", mid);
+                clearchar(mid, lim);
+            }
+            m = 0;
+        }
+        else
+        {
+            ++m;
+        }
+        ++k;
+    }
 }
