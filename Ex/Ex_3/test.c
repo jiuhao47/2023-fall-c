@@ -1,13 +1,9 @@
 #include <stdio.h>
 int main()
 {
-    int thr(int n);
-    printf("%d", thr(3));
+    char name[16];
+    gets(name);
+    for (int i = 0; i < 16 && name[i]; i++)
+        printf("%s", name[i]);
     return 0;
-}
-int thr(int n)
-{
-    int z;
-    z = n * n * n;
-    return z;
 }
