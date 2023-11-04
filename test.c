@@ -1,9 +1,25 @@
 #include <stdio.h>
+void fun(int n)
+{
+    if (n < 0)
+    {
+        printf("-");
+        n *= -1;
+    }
+    while (n % 10 == 0)
+    {
+        n = n / 10;
+    }
+    while (n != 0)
+    {
+        printf("%d", n % 10);
+        n = n / 10;
+    }
+}
 int main()
 {
-    printf("0x%x\n", 023 << 3 ^ 6 | 0x14);
-    printf("0x%x\n", 0x27 & (((~6) + 17) >> 2));
-    printf("0x%x\n", 0x8265 & (~0 << 6));
-    printf("0x%x", (((~0 << 6))));
+    int n;
+    scanf("%d", &n);
+    fun(n);
     return 0;
 }
