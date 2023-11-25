@@ -9,5 +9,5 @@ int main()
     printf("addr_of_d=%p\n", &d);
     printf("addr_of_e=%p\n", &e);
     printf("addr_of_f=%p\n", &f);
-    return 0
+    return 0;
 }
