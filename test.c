@@ -1,25 +1,18 @@
 #include <stdio.h>
-void fun(int n)
-{
-    if (n < 0)
-    {
-        printf("-");
-        n *= -1;
-    }
-    while (n % 10 == 0)
-    {
-        n = n / 10;
-    }
-    while (n != 0)
-    {
-        printf("%d", n % 10);
-        n = n / 10;
-    }
-}
 int main()
 {
-    int n;
-    scanf("%d", &n);
-    fun(n);
+    int array[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int *p;
+    p = array;
+    printf("*p=%d\t *++p=%d\t *p=%d\t \n", *p, *++p, *p);
+    printf("*p=%d\t p[3]=%d\t *p=%d\t \n", *p, p[3], *p);
+    printf("*p=%d\t p++[2]=%d\t *p=%d\t \n", *p, p++[2], *p);
+    printf("*p=%d\t *(p+=3)=%d\t *p=%d\t \n", *p, *(p += 3), *p);
+    printf("*p=%d\t *p+=2=%d\t *p=%d\t \n", *p, *p += 2, *p);
+    printf("*p=%d\n", *p);
+    printf("*p=%d\t *p++=%d\t *p=%d\t \n", *p, *p++, *p);
+    printf("*p=%d\n", *p);
+    printf("*p=%d\t p[1]=%d\t *p=%d\t \n", *p, p[1], *p);
+    printf("*p=%d\t p[3]=%d\t *p=%d\t \n", *p, p[3], *p);
     return 0;
 }
