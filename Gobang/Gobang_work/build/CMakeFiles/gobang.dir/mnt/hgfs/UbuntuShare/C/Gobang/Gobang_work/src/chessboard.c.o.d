@@ -1,7 +1,7 @@
 CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/chessboard.c.o: \
  /mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/chessboard.c \
  /usr/include/stdc-predef.h \
- /mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/head.h \
+ /mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/build/../inc/head.h \
  /usr/include/ctype.h /usr/include/features.h \
  /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \

@@ -19,9 +19,9 @@ char arrayForEmptyBoard[SIZE][SIZE * CHARSIZE + 1] =
         "©»©Û©Û©Û©Û©Û©Û©Û©Û©Û©Û©Û©Û©Û©¿"};
 // ChessBoard_display
 
-char play1Pic[] = "¡ñ"; // ºÚÆå×Ó;
+char play1Pic[] = "¡ñ"; // Black chess;
 char play1CurrentPic[] = "¡ø";
-char play2Pic[] = "¡ò"; // °×Æå×Ó;
+char play2Pic[] = "¡ò"; // White chess;
 char play2CurrentPic[] = "¡÷";
 char arrayForDisplayBoard[SIZE][SIZE * CHARSIZE + 1];
 
@@ -114,7 +114,7 @@ void updatechesscurrent(void)
 void displayBoard(void)
 {
     int i;
-    // system("clear");
+    system("clear");
     for (int i = 0; i < 15; i++)
     {
         // printf("%s\n", arrayForEmptyBoard[i]);

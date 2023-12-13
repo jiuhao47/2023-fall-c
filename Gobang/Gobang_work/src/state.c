@@ -14,7 +14,7 @@ void init_state(void)
 
 int stateprocess(char line[])
 {
-    printf("cmp=%d\n", strcmp(line, EXIT));
+    // printf("cmp=%d\n", strcmp(line, EXIT));
     int vaild = 0;
     if ((!gamestates.runningstate) && (!strcmp(line, MANUAL)))
     {
@@ -30,14 +30,49 @@ int stateprocess(char line[])
     }
     else if (!strcmp(line, EXIT))
     {
-        printf("ENTER\n");
+        // printf("ENTER\n");
         gamestates.runningstate = 0;
         vaild = 1;
     }
     else
     {
-        gamestates.playerstate = !gamestates.playerstate;
+        if (gamestates.runningstate != -1)
+        {
+            gamestates.playerstate = !gamestates.playerstate;
+        }
         vaild = 0;
     }
     return vaild;
+}
+
+void InfoDisplay(void)
+{
+    printf("Runningstate=%d\n", gamestates.runningstate);
+    if (gamestates.runningstate)
+    {
+        printf(INPUTCHESS_S);
+    }
+    else
+    {
+        printf(INPUTMODE_S);
+    }
+}
+
+void ErrorHandle(void)
+{
+    // inputprocess()
+    if ((pos.x < 1) || (pos.x > SIZE) || (pos.y < 0) || (pos.y > SIZE - 1))
+    {
+        printf(ERROR_OUT_OF_RANGE);
+        gamestates.runningstate = -1;
+        pos = inputprocess_manual();
+        gamestates.runningstate = 1;
+    }
+    if (arrayForInnerBoardLayout[SIZE - pos.x][pos.y] != 0)
+    {
+        printf(ERROR_ALREDY_HAVE);
+        gamestates.runningstate = -1;
+        pos = inputprocess_manual();
+        gamestates.runningstate = 1;
+    }
 }

@@ -8,13 +8,17 @@
 
 #define SIZE 15      // ChessBoardSize
 #define CHARSIZE 2   // Single char size
-#define LINEMAXLEN 6 // Input max length
+#define LINEMAXLEN 7 // Input max length
 #define BLACKCHESS 1
 #define WHITECHESS 2
 #define BLACKCHESSCURRENT 3
 #define WHITECHESSCURRENT 4          // Chess code
 #define INPUT_EXAMPLE " MOVE(%d,%d)" // Input example
-#define MANUAL "START"
+#define INPUTCHESS_S "Input Chess Point:"
+#define INPUTMODE_S "Input Game Mode:"
+#define ERROR_OUT_OF_RANGE "Input out of range, Please enter again!\n"
+#define ERROR_ALREDY_HAVE "This place already has chess, Please enter again!\n"
+#define MANUAL "START\n"
 #define AUTO "READY"
 #define EXIT "quit\n" // State string
 
@@ -23,6 +27,7 @@ void initRecordBoard(void);
 void innerLayoutToDisplayArray(void);
 void displayBoard(void);
 void updatechesscurrent(void);
+extern int arrayForInnerBoardLayout[SIZE][SIZE];
 // chessboard.c
 
 // functions.c
@@ -36,6 +41,7 @@ struct point
     int x;
     int y;
 };
+extern struct point pos;
 // inputprocess.c
 
 void init_state(void);
@@ -49,6 +55,8 @@ struct player
     int chesscurrent;
 };
 // player.c
+void ErrorHandle(void);
+void InfoDisplay(void);
 struct gamestate
 {
     int runningstate;
@@ -56,6 +64,6 @@ struct gamestate
     int round;
 };
 extern struct gamestate gamestates;
-extern int arrayForInnerBoardLayout[SIZE][SIZE];
+
 // state.c
 #endif

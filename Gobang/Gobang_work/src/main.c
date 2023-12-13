@@ -18,7 +18,5 @@ int main()
         }
         ++gamestates.round;
     }
-    printf("OVER\n");
-
     return 0;
 }

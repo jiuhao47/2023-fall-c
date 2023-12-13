@@ -12,8 +12,9 @@ struct point inputprocess_manual(void)
         line[j] = '\0';
     }
     int i = 0;
+
     mygetline(line, LINEMAXLEN);
-    printf("%s\n", line);
+    // printf("%s\n", line);
     if (!(stateprocess(line)))
     {
         while (line[i] != '\0')
@@ -28,11 +29,7 @@ struct point inputprocess_manual(void)
             }
             ++i;
         }
-    }
-    if ((pos.x < 0) || (pos.x > SIZE) || (pos.y < 0) || (pos.y > SIZE))
-    {
-        printf("Input out of range, Please enter again!\n");
-        pos = inputprocess_manual();
+        ErrorHandle();
     }
     return pos;
 }
@@ -50,7 +47,7 @@ struct point inputprocess_auto(void)
 void input(void)
 {
     struct point temppos;
-    printf("runningstate=%d\n", gamestates.runningstate);
+    InfoDisplay();
     switch (gamestates.runningstate)
     {
     case 0:
@@ -58,6 +55,7 @@ void input(void)
         break;
     case 1:
         temppos = inputprocess_manual();
+
         if (gamestates.runningstate)
         {
             arrayForInnerBoardLayout[SIZE - temppos.x][temppos.y] = (gamestates.playerstate == 0) ? BLACKCHESSCURRENT : WHITECHESSCURRENT;
