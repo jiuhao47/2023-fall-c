@@ -35,7 +35,7 @@ void initRecordBoard(void)
     {
         for (int j = 0; j < SIZE; j++)
         {
-            arrayForInnerBoardLayout[i][j] = 0;
+            arrayForInnerBoardLayout[i][j] = EMPTY;
         }
     }
 }

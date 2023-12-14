@@ -58,12 +58,12 @@ void input(void)
 
         if (gamestates.runningstate)
         {
-            arrayForInnerBoardLayout[SIZE - temppos.x][temppos.y] = (gamestates.playerstate == 0) ? BLACKCHESSCURRENT : WHITECHESSCURRENT;
+            arrayForInnerBoardLayout[SIZE - temppos.x][temppos.y] = (gamestates.playerstate == BLACK) ? BLACKCHESSCURRENT : WHITECHESSCURRENT;
         }
         break;
     case 2:
         temppos = inputprocess_auto();
-        arrayForInnerBoardLayout[SIZE - temppos.x][temppos.y - 1] = (gamestates.playerstate == 0) ? BLACKCHESSCURRENT : WHITECHESSCURRENT;
+        arrayForInnerBoardLayout[SIZE - temppos.x][temppos.y - 1] = (gamestates.playerstate == BLACK) ? BLACKCHESSCURRENT : WHITECHESSCURRENT;
         break;
     }
 }

@@ -9,6 +9,10 @@
 #define SIZE 15      // ChessBoardSize
 #define CHARSIZE 2   // Single char size
 #define LINEMAXLEN 7 // Input max length
+#define EMPTY 0      // Empty place
+#define OCCUPIED 1   // Place occupied
+#define BLACK 0      // Black player
+#define WHITE 1      // White player
 #define BLACKCHESS 1
 #define WHITECHESS 2
 #define BLACKCHESSCURRENT 3
@@ -49,11 +53,13 @@ void updateBoard(void);
 void input(void);
 // main.c
 
+void initplayer(void);
+void arrayTransform(int player);
 struct player
 {
-    int chess;
-    int chesscurrent;
+    int arrayForInnerMind[SIZE][SIZE];
 };
+extern struct player black, white;
 // player.c
 void ErrorHandle(void);
 void InfoDisplay(void);

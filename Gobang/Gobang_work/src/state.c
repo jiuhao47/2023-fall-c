@@ -1,6 +1,6 @@
 #include "head.h"
 
-void initplayer(void);
+// runningstate -1 0 1 2
 struct gamestate gamestates;
 
 void init_state(void)
