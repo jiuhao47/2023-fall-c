@@ -54,7 +54,7 @@ void input(void);
 // main.c
 
 void initplayer(void);
-void arrayTransform(int player);
+// void arrayTransform(int player);
 struct player
 {
     int arrayForInnerMind[SIZE][SIZE];

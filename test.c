@@ -1,18 +1,29 @@
 #include <stdio.h>
+#define MAXSIZE 1000000
 int main()
 {
-    int array[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    int *p;
-    p = array;
-    printf("*p=%d\t *++p=%d\t *p=%d\t \n", *p, *++p, *p);
-    printf("*p=%d\t p[3]=%d\t *p=%d\t \n", *p, p[3], *p);
-    printf("*p=%d\t p++[2]=%d\t *p=%d\t \n", *p, p++[2], *p);
-    printf("*p=%d\t *(p+=3)=%d\t *p=%d\t \n", *p, *(p += 3), *p);
-    printf("*p=%d\t *p+=2=%d\t *p=%d\t \n", *p, *p += 2, *p);
-    printf("*p=%d\n", *p);
-    printf("*p=%d\t *p++=%d\t *p=%d\t \n", *p, *p++, *p);
-    printf("*p=%d\n", *p);
-    printf("*p=%d\t p[1]=%d\t *p=%d\t \n", *p, p[1], *p);
-    printf("*p=%d\t p[3]=%d\t *p=%d\t \n", *p, p[3], *p);
+    int num[MAXSIZE];
+    for (int i = 0; i < MAXSIZE; i++)
+    {
+        num[i] = 1;
+    }
+    for (int i = 2; i * i <= MAXSIZE; i++)
+    {
+        if (num[i])
+        {
+            for (int j = i + i; j < MAXSIZE; j += i)
+            {
+                num[j] = 0;
+            }
+        }
+    }
+
+    for (int i = 0; i < MAXSIZE; i++)
+    {
+        if (num[i])
+        {
+            printf("%d ", i);
+        }
+    }
     return 0;
 }

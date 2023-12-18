@@ -13,7 +13,7 @@ void initplayer(void)
         }
     }
 }
-
+/*
 void arrayTransform(int player)
 {
     for (int i = 0; i < SIZE; i++)
@@ -31,3 +31,4 @@ void arrayTransform(int player)
         }
     }
 }
+*/
