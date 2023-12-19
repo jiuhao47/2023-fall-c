@@ -19,10 +19,10 @@ int chainjudge(int mode)
 // 然后使用周遭判断，来记录目前棋盘上的连珠情况
 // 又一个新的数据结构
 
-int winjudge(int x, int y, int mode)
+int winjudge(int x, int y, int mode, int player)
 {
     int nowchess = arrayForInnerBoardLayout[SIZE - x][y];
-    int cnt;
+    int count;
     int dx, dy;
     switch (mode)
     {
@@ -42,10 +42,13 @@ int winjudge(int x, int y, int mode)
         printf("Wrong Judge Mode!\n");
         return -1;
     }
-    for (int i = 0; i < 9; i++)
+    for (int i = -4; i <= 4; i++)
     {
-        if ()
+        int count;
+        if (arrayForInnerBoardLayout[SIZE - (pos.x + i * dx)][pos.y + i * dy] == ((player == BLACK) ? BLACKCHESS : WHITECHESS))
+        {
+            count = count = 1;
+        }
     }
+    return (count == 5) ? 1 : 0;
 }
-
-// 坐标系需要重整
