@@ -4,19 +4,25 @@ int main()
 {
     init_state();
     input();
-    updateBoard();
+    update();
     while (gamestates.runningstate)
     {
         if (gamestates.runningstate == 1)
         {
-            updateBoard();
+            update();
+            winjudge();
         }
         else if (gamestates.runningstate == 2)
         {
-            updateBoard();
+            update();
             getchar();
         }
-        ++gamestates.round;
+        else if (gamestates.runningstate == -2)
+        {
+            printf(WININFO, (!gamestates.playerstate == BLACK) ? BLACKNAME : WHITENAME);
+            gamestates.runningstate = 0;
+        }
+        //++gamestates.round;
     }
     return 0;
 }

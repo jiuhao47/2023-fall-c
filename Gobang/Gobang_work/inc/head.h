@@ -16,7 +16,10 @@
 #define BLACKCHESS 1
 #define WHITECHESS 2
 #define BLACKCHESSCURRENT 3
-#define WHITECHESSCURRENT 4          // Chess code
+#define WHITECHESSCURRENT 4 // Chess code
+#define BLACKNAME "Black"
+#define WHITENAME "White"
+#define WININFO "%s Win!\n"
 #define INPUT_EXAMPLE " MOVE(%d,%d)" // Input example
 #define INPUTCHESS_S "Input Chess Point:"
 #define INPUTMODE_S "Input Game Mode:"
@@ -38,8 +41,8 @@ extern int arrayForInnerBoardLayout[SIZE][SIZE];
 
 int mygetline(char s[], int lim);
 int stateprocess(char line[]);
-struct point inputprocess_manual(void);
-struct point inputprocess_auto(void);
+void inputprocess_manual(void);
+void inputprocess_auto(void);
 struct point
 {
     int x;
@@ -49,7 +52,7 @@ extern struct point pos;
 // inputprocess.c
 
 void init_state(void);
-void updateBoard(void);
+void update(void);
 void input(void);
 // main.c
 
@@ -72,4 +75,7 @@ struct gamestate
 extern struct gamestate gamestates;
 
 // state.c
+void winjudge(void);
+int linejudge(int x, int y, int mode, int player);
+// judge.c
 #endif

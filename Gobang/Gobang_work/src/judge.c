@@ -5,11 +5,11 @@ void judge(void)
 }
 
 // Chainjudge
-// mode 0,1,2,3
-// 0:x
-// 1:y
-// 2:x-y
-// 3:y-x
+// mode 1,2,3,4
+// 1:x
+// 2:y
+// 3:x-y
+// 4:y-x
 int chainjudge(int mode)
 {
 
@@ -19,10 +19,10 @@ int chainjudge(int mode)
 // 然后使用周遭判断，来记录目前棋盘上的连珠情况
 // 又一个新的数据结构
 
-int winjudge(int x, int y, int mode, int player)
+int linejudge(int x, int y, int mode, int player)
 {
     int nowchess = arrayForInnerBoardLayout[SIZE - x][y];
-    int count;
+    int count = 0;
     int dx, dy;
     switch (mode)
     {
@@ -44,11 +44,25 @@ int winjudge(int x, int y, int mode, int player)
     }
     for (int i = -4; i <= 4; i++)
     {
-        int count;
-        if (arrayForInnerBoardLayout[SIZE - (pos.x + i * dx)][pos.y + i * dy] == ((player == BLACK) ? BLACKCHESS : WHITECHESS))
+        // 边缘检测没写
+        if ((arrayForInnerBoardLayout[SIZE - (pos.x + i * dx)][pos.y + i * dy] == ((player == BLACK) ? BLACKCHESS : WHITECHESS)) || (arrayForInnerBoardLayout[SIZE - (pos.x + i * dx)][pos.y + i * dy] == ((player == BLACK) ? BLACKCHESSCURRENT : WHITECHESSCURRENT)))
         {
-            count = count = 1;
+            count = count + 1;
         }
     }
+    printf("(%d,%c) %d:Count=%d\n", pos.x, pos.y + 'A', mode, count);
     return (count == 5) ? 1 : 0;
+}
+
+void winjudge(void)
+{
+    int win = 0;
+    for (int i = 1; i < 5; i++)
+    {
+        win = win + linejudge(pos.x, pos.y, i, gamestates.playerstate);
+    }
+    if (win > 0)
+    {
+        gamestates.runningstate = -2;
+    }
 }

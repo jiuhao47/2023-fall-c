@@ -1,6 +1,6 @@
 #include "head.h"
 
-// runningstate -1 0 1 2
+// runningstate -2 -1 0 1 2
 struct gamestate gamestates;
 
 void init_state(void)
@@ -50,6 +50,7 @@ void InfoDisplay(void)
     printf("Runningstate=%d\n", gamestates.runningstate);
     if (gamestates.runningstate)
     {
+        printf("Now Player:%s\n", (gamestates.playerstate == BLACK) ? BLACKNAME : WHITENAME);
         printf(INPUTCHESS_S);
     }
     else
@@ -65,14 +66,14 @@ void ErrorHandle(void)
     {
         printf(ERROR_OUT_OF_RANGE);
         gamestates.runningstate = -1;
-        pos = inputprocess_manual();
+        inputprocess_manual();
         gamestates.runningstate = 1;
     }
     if (arrayForInnerBoardLayout[SIZE - pos.x][pos.y] != 0)
     {
         printf(ERROR_ALREDY_HAVE);
         gamestates.runningstate = -1;
-        pos = inputprocess_manual();
+        inputprocess_manual();
         gamestates.runningstate = 1;
     }
 }
