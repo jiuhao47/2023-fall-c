@@ -1,0 +1,8 @@
+{
+    "cmake.sourceDirectory": "E:/VSCODE/UbuntuShare/C/Gobang/Gobang_work/build",
+    "files.associations": {
+        "unistd.h": "c",
+        "types.h": "c",
+        "stat.h": "c"
+    }
+}

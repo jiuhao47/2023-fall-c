@@ -5,7 +5,13 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
+/*
+typedef char int8;
+typedef unsigned char uint8;
+typedef int8 Player;
+typedef int8 Piece;
+*/
+#define DIRECTION 4
 #define SIZE 15      // ChessBoardSize
 #define CHARSIZE 2   // Single char size
 #define LINEMAXLEN 7 // Input max length
@@ -25,7 +31,7 @@
 #define INPUTMODE_S "Input Game Mode:"
 #define ERROR_OUT_OF_RANGE "Input out of range, Please enter again!\n"
 #define ERROR_ALREDY_HAVE "This place already has chess, Please enter again!\n"
-#define MANUAL "START\n"
+#define MANUAL "\n"
 #define AUTO "READY"
 #define EXIT "quit\n" // State string
 
@@ -37,9 +43,11 @@ void updatechesscurrent(void);
 extern int arrayForInnerBoardLayout[SIZE][SIZE];
 // chessboard.c
 
+int displayPosToInnerPos(int tempx, int tempy);
+int mygetline(char s[], int lim);
+int pointInBoard(int tempx, int tempy);
 // functions.c
 
-int mygetline(char s[], int lim);
 int stateprocess(char line[]);
 void inputprocess_manual(void);
 void inputprocess_auto(void);
@@ -75,7 +83,21 @@ struct gamestate
 extern struct gamestate gamestates;
 
 // state.c
+extern int chessshape[DIRECTION][9];
+int chainjudge(void);
+int chainjudge_mode(int mode);
+void judge(void);
+int doublefourjudge(void);
+int fourjudge(int mode);
+int doublethreejudge(void);
+int threejudge(int mode);
+/*
 void winjudge(void);
-int linejudge(int x, int y, int mode, int player);
-// judge.c
+truct chessshape linejudge(int x, int y, int player, int *Board);
+int fourjudge(int mode, struct chessshape chessshape, int *Board);
+//judge.c
+*/
+void chessShapeToken(int x, int y, int *Board);
+void statedisplay(void);
+void displaychessshape(int *Board, int L, int M);
 #endif

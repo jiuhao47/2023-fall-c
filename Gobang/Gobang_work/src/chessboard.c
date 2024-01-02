@@ -114,7 +114,7 @@ void updatechesscurrent(void)
 void displayBoard(void)
 {
     int i;
-    // system("clear");
+    system("clear");
     for (int i = 0; i < 15; i++)
     {
         // printf("%s\n", arrayForEmptyBoard[i]);

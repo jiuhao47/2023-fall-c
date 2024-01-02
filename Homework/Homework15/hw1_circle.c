@@ -1,25 +1,52 @@
 #include <stdio.h>
 #include <stdlib.h>
-void output(int n, int k);
+#define LEN 1000
 
+void left(int n, int k);
 int main(int argc, char *argv[])
 {
-    int para[2];
-    while (--argc > 0)
+    int n, k, leftno;
+    if (argc != 3 || (n = atoi(argv[1])) <= 0 || (k = atoi(argv[2])) <= 0)
     {
-        para[argc - 1] = atoi(argv[argc]);
+        printf("Usage: ./hw1_circle.c n k\n");
+        return 1;
     }
-    output(para[0], para[1]);
-    return 0;
+    if (n > LEN)
+    {
+        printf("n is too large, it should be less than %d\n", n);
+        return 1;
+    }
+    left(n, k);
 }
 
-void output(int n, int k)
+void left(int n, int k)
 {
-    for (int i = 1; i <= n; i++)
+    struct player
     {
-        if (i % k == 0)
-        {
-            printf("Out:%d!\n", i);
-        }
+        int num;
+        int status;
+    } cycle[LEN];
+
+    int i, count, remain;
+    for (i = 0; i < n; i++)
+    {
+        cycle[i].num = i + 1;
+        cycle[i].status = 1;
     }
+    i = count = 0;
+    remain = n;
+    while (remain)
+    {
+        if (cycle[i].status == 1)
+        {
+            if (++count % k == 0)
+            {
+                printf("%3d", cycle[i].num);
+                cycle[i].status = 0;
+                remain--;
+            }
+        }
+        i = (i + 1) % n;
+    }
+    printf("\n");
 }

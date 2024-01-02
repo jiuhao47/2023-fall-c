@@ -11,5 +11,5 @@ int playerstate;
 
 int main()
 {
-    printf("%d", strcmp("EXIT\n", EXIT));
+    printf("%d", (-4 * -4));
 }
