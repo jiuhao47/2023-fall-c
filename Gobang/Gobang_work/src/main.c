@@ -10,7 +10,7 @@ int main()
         if (gamestates.runningstate == 1)
         {
             update();
-            judge();
+            gamejudger();
         }
         else if (gamestates.runningstate == 2)
         {

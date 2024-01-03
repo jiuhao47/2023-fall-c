@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "2.8"
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "gobang::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-gobang-Debug-0550ac5b0c2dec60d69e.json",
+					"jsonFile" : "target-gobang-Debug-9212a3cb834a3e492ed8.json",
 					"name" : "gobang",
 					"projectIndex" : 0
 				}
@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "E:/VSCODE/UbuntuShare/C/Gobang/Gobang_work/build",
-		"source" : "E:/VSCODE/UbuntuShare/C/Gobang/Gobang_work/build"
+		"build" : "/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/build",
+		"source" : "/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/build"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 5
+		"minor" : 3
 	}
 }

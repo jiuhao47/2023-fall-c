@@ -83,21 +83,21 @@ struct gamestate
 extern struct gamestate gamestates;
 
 // state.c
-extern int chessshape[DIRECTION][9];
-int chainjudge(void);
-int chainjudge_mode(int mode);
-void judge(void);
-int doublefourjudge(void);
-int fourjudge(int mode);
-int doublethreejudge(void);
-int threejudge(int mode);
-/*
-void winjudge(void);
-truct chessshape linejudge(int x, int y, int player, int *Board);
-int fourjudge(int mode, struct chessshape chessshape, int *Board);
-//judge.c
-*/
-void chessShapeToken(int x, int y, int *Board);
-void statedisplay(void);
+int chainjudge(int *chessshape);
+int chainjudge_mode(int mode, int *chessshape);
+int judge(int x, int y);
+void gamejudger(void);
+int doublefourjudge(int x, int y, int *chessshape);
+int fourjudge(int x, int y, int mode, int *chessshape);
+int doublethreejudge(int x, int y, int *chessshape);
+int threejudge(int x, int y, int mode, int *chessshape);
+// int checkempty(int x, int y, int mode, int i);
+
+// judge.c
+
+void chessShapeToken(int x, int y, int *Board, int *chessshape);
+void statedisplay(int *chessshape);
 void displaychessshape(int *Board, int L, int M);
+
+// extern int check_507745524;
 #endif
