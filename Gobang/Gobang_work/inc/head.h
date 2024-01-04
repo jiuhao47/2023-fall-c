@@ -23,6 +23,7 @@ typedef int8 Piece;
 #define WHITECHESS 2
 #define BLACKCHESSCURRENT 3
 #define WHITECHESSCURRENT 4 // Chess code
+#define MAXEVOLVELAYERS 3
 #define BLACKNAME "Black"
 #define WHITENAME "White"
 #define WININFO "%s Win!\n"
@@ -102,9 +103,15 @@ int threejudge(int x, int y, int mode, int *chessshape);
 void chessShapeToken(int x, int y, int *Board, int *chessshape);
 // int checkempty(int x, int y, int mode, int i);
 // judge.c
+struct pointWithScore
+{
+    int x;
+    int y;
+    int score;
+};
 
 int ai(void);
-void ai_input(int x, int y)
+void ai_input(int x, int y);
 // ai.c
 
 #endif

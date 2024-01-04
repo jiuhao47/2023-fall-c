@@ -5,7 +5,7 @@ struct gamestate gamestates;
 
 void init_state(void)
 {
-    system("clear");
+    // system("clear");
     gamestates.runningstate = 0;
     gamestates.playerstate = 0; //
     gamestates.round = 0;
