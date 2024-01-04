@@ -114,7 +114,7 @@ void updatechesscurrent(void)
 void displayBoard(void)
 {
     int i;
-    system("clear");
+    // system("clear");
     for (int i = 0; i < 15; i++)
     {
         // printf("%s\n", arrayForEmptyBoard[i]);
@@ -131,12 +131,51 @@ void displayBoard(void)
 void update(void)
 {
     innerLayoutToDisplayArray();
+    if (gamestates.runningstate == -2)
+    {
+        gamestates.runningstate = 0;
+        return;
+    }
+    else if (gamestates.runningstate == 1)
+    {
+        updateHumanInput();
+    }
+    else if (gamestates.runningstate == 2)
+    {
+        updateHumanInput();
+        if (gamestates.runningstate)
+            updateAiInput();
+    }
+    else if (gamestates.runningstate == 3)
+    {
+        updateAiInput();
+        if (gamestates.runningstate)
+            updateHumanInput();
+    }
+    else if (gamestates.runningstate == 4)
+    {
+        updateAiInput();
+    }
+    else if (gamestates.runningstate == 5)
+    {
+        input();
+    }
+}
+
+void updateHumanInput(void)
+{
+    innerLayoutToDisplayArray();
     input();
     updatechesscurrent();
     displayBoard();
-
-    /*
-    for (int i = 1; i < 5;i++)
-        gamestates.runningstate = (winjudge(pos.x, pos.y, ) == 1) ? 0 : gamestates.runningstate;
-    */
+    gamejudger();
+}
+void updateAiInput(void)
+{
+    innerLayoutToDisplayArray();
+    ai();
+    updatechesscurrent();
+    displayBoard();
+    gamejudger();
+    printf("SET %c%d\n", 'A' + pos.y, pos.x);
 }

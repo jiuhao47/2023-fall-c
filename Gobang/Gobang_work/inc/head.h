@@ -28,11 +28,14 @@ typedef int8 Piece;
 #define WININFO "%s Win!\n"
 #define INPUT_EXAMPLE " MOVE(%d,%d)" // Input example
 #define INPUTCHESS_S "Input Chess Point:"
-#define INPUTMODE_S "Input Game Mode:"
+#define INPUTMODE_S "\n(1)Human Vs Human\n(2)Human(Black) Vs AI(White)\n(3)Human(White) Vs AI(BLACK)\n(4)AI Vs AI\n(5)AUTO CHECK\n\nInput Game Mode:"
 #define ERROR_OUT_OF_RANGE "Input out of range, Please enter again!\n"
 #define ERROR_ALREDY_HAVE "This place already has chess, Please enter again!\n"
-#define MANUAL "\n"
-#define AUTO "READY"
+#define MANUAL "1\n"
+#define HUMANVSAI "2\n"
+#define AIVSHUMAN "3\n"
+#define AIVSAI "4\n"
+#define AUTO "READY\n"
 #define EXIT "quit\n" // State string
 
 void input(void);
@@ -46,6 +49,8 @@ extern int arrayForInnerBoardLayout[SIZE][SIZE];
 int displayPosToInnerPos(int tempx, int tempy);
 int mygetline(char s[], int lim);
 int pointInBoard(int tempx, int tempy);
+void statedisplay(int *chessshape);
+void displaychessshape(int *Board, int L, int M);
 // functions.c
 
 int stateprocess(char line[]);
@@ -61,6 +66,8 @@ extern struct point pos;
 
 void init_state(void);
 void update(void);
+void updateHumanInput(void);
+void updateAiInput(void);
 void input(void);
 // main.c
 
@@ -73,6 +80,7 @@ struct player
 extern struct player black, white;
 // player.c
 void ErrorHandle(void);
+void winHandle(int check);
 void InfoDisplay(void);
 struct gamestate
 {
@@ -91,13 +99,12 @@ int doublefourjudge(int x, int y, int *chessshape);
 int fourjudge(int x, int y, int mode, int *chessshape);
 int doublethreejudge(int x, int y, int *chessshape);
 int threejudge(int x, int y, int mode, int *chessshape);
+void chessShapeToken(int x, int y, int *Board, int *chessshape);
 // int checkempty(int x, int y, int mode, int i);
-
 // judge.c
 
-void chessShapeToken(int x, int y, int *Board, int *chessshape);
-void statedisplay(int *chessshape);
-void displaychessshape(int *Board, int L, int M);
+int ai(void);
+void ai_input(int x, int y)
+// ai.c
 
-// extern int check_507745524;
 #endif

@@ -1,6 +1,12 @@
 [
 {
   "directory": "E:/VSCODE/UbuntuShare/C/Gobang/Gobang_work/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/gobang.dir/includes_C.rsp -g -o CMakeFiles\\gobang.dir\\E_\\VSCODE\\UbuntuShare\\C\\Gobang\\Gobang_work\\src\\ai.c.obj -c E:\\VSCODE\\UbuntuShare\\C\\Gobang\\Gobang_work\\src\\ai.c",
+  "file": "E:/VSCODE/UbuntuShare/C/Gobang/Gobang_work/src/ai.c",
+  "output": "CMakeFiles/gobang.dir/E_/VSCODE/UbuntuShare/C/Gobang/Gobang_work/src/ai.c.obj"
+},
+{
+  "directory": "E:/VSCODE/UbuntuShare/C/Gobang/Gobang_work/build",
   "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/gobang.dir/includes_C.rsp -g -o CMakeFiles\\gobang.dir\\E_\\VSCODE\\UbuntuShare\\C\\Gobang\\Gobang_work\\src\\chessboard.c.obj -c E:\\VSCODE\\UbuntuShare\\C\\Gobang\\Gobang_work\\src\\chessboard.c",
   "file": "E:/VSCODE/UbuntuShare/C/Gobang/Gobang_work/src/chessboard.c",
   "output": "CMakeFiles/gobang.dir/E_/VSCODE/UbuntuShare/C/Gobang/Gobang_work/src/chessboard.c.obj"

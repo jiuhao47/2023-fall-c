@@ -51,25 +51,13 @@ void gamejudger(void)
 {
     int check;
     check = judge(pos.x, pos.y);
-    if (check == 1)
-    {
-        gamestates.runningstate = -2;
-    }
-    else if (check >= 2)
-    {
-        gamestates.playerstate = !gamestates.playerstate;
-        gamestates.runningstate = -2;
-    }
+    winHandle(check);
 }
 
 int judge(int x, int y)
 {
-    // check_507745524 = check_507745524 + 1;
-    //  printf("%d:Enter\n", check_507745524);
-    //  printf("(%d,%d)", x, y);
     int chessshape[DIRECTION][9];
     chessShapeToken(x, y, arrayForInnerBoardLayout[0], chessshape[0]);
-    statedisplay(chessshape[0]);
     int count = chainjudge(chessshape[0]);
     if (count == -1)
     {
@@ -77,21 +65,18 @@ int judge(int x, int y)
     }
     else if (count == -2)
     {
-        printf("Long Chain Detected!\n");
         return 2;
     }
     else
     {
         if (doublefourjudge(x, y, chessshape[0]))
         {
-            printf("Double Four Detected!\n");
             return 4;
         }
         else
         {
             if (doublethreejudge(x, y, chessshape[0]))
             {
-                printf("Double Three Detected!\n");
                 return 3;
             }
         }
@@ -269,23 +254,4 @@ int threejudge(int x, int y, int mode, int *chessshape)
         }
     }
     return (count > 0) ? 1 : 0;
-}
-
-void displaychessshape(int *Board, int L, int M)
-{
-    for (int i = 0; i < L; i++)
-    {
-        for (int j = 0; j < M; j++)
-        {
-            printf("%3d", Board[i * M + j]);
-        }
-        printf("\n");
-    }
-}
-
-void statedisplay(int *chessshape)
-{
-    // displaychessshape(chessshape[0], DIRECTION, 9);
-    printf("\n");
-    displaychessshape(arrayForInnerBoardLayout[0], SIZE, SIZE);
 }
