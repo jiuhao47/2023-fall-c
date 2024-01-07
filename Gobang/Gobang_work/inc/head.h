@@ -106,7 +106,7 @@ void chessShapeToken(int x, int y, int *Board, int *chessshape);
 int ai(void);
 void ai_input(int x, int y);
 
-extern struct Treenode *scoreRoot;
+// extern struct Treenode *scoreRoot;
 struct Treenode
 {
     int score;
@@ -117,6 +117,9 @@ struct Treenode
     struct Treenode *brother;
 };
 struct Treenode *talloc(void);
+void init_scoreRoot(void);
+void buildtree(void);
+
 void freeTree(struct Treenode *brother);
 void depthupdate(struct Treenode *root);
 void getbrotherScore(struct Treenode *root);
@@ -124,7 +127,7 @@ int sontreeScoreSum(struct Treenode *son);
 struct Treenode *treeupdate(struct Treenode *root);
 void addBrother(int score, int x, int y, struct Treenode *root);
 void treeBrotherSort(struct Treenode *root, struct Treenode *new);
-void addSon(int x, int y, struct Treenode *root);
+void addSon(int score, int x, int y, struct Treenode *root);
 void treeupdate(struct Treenode *root);
 // ai.c
 
