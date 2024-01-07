@@ -48,3 +48,8 @@ void statedisplay(int *chessshape)
     printf("\n");
     displaychessshape(arrayForInnerBoardLayout[0], SIZE, SIZE);
 }
+
+void buildlist(struct scoreRef *plist)
+{
+    if(plist==NULL)
+}

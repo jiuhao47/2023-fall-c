@@ -59,6 +59,7 @@ int stateprocess(char line[])
 
 void InfoDisplay(void)
 {
+    printf("Made by Junyan Jiang\n");
     printf("Runningstate=%d\n", gamestates.runningstate);
     if (gamestates.runningstate)
     {
