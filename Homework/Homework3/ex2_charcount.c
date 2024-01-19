@@ -3,13 +3,13 @@ int main()
 {
 	long nc;
 	int c;
-	nc=0;
-	c=getchar();
-	while(c!=EOF)
+	nc = 0;
+	c = getchar();
+	while (c != EOF)
 	{
 		++nc;
-		c=getchar();
+		c = getchar();
 	}
-	printf("\nthe total number : %ld\n",nc);
+	printf("\nthe total number : %ld\n", nc);
 	return 0;
 }

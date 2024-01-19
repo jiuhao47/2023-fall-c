@@ -51,6 +51,7 @@ void gamejudger(void)
 {
     int check;
     check = judge(pos.x, pos.y);
+    // printf("(%c,%d):score:%d\n", 'A' + pos.y, pos.x, judge_score(pos.x, pos.y, arrayForInnerBoardLayout[0]));
     winHandle(check);
 }
 
@@ -141,7 +142,7 @@ int chainjudge(int *chessshape)
         {
             return -1;
         }
-        else if ((maxcount > 5) && (!gamestates.playerstate == BLACK))
+        else if ((maxcount > 5))
         {
             return -2;
         }
@@ -162,7 +163,6 @@ int chainjudge_mode(int mode, int *chessshape)
         }
         else
         {
-
             count = 0;
         }
     }
@@ -170,7 +170,7 @@ int chainjudge_mode(int mode, int *chessshape)
     {
         return -1;
     }
-    else if ((maxcount > 5) && (!gamestates.playerstate == BLACK))
+    else if ((maxcount > 5))
     {
         return -2;
     }
@@ -202,16 +202,12 @@ int fourjudge(int x, int y, int mode, int *chessshape)
     int count = 0;
     for (int i = 0; i < 9; i++)
     {
-        // if ((chessshape[mode * 9 + i] == EMPTY) && (checkempty(x, y, mode, i) <= 1))
         if ((chessshape[mode * 9 + i] == EMPTY))
         {
             chessshape[mode * 9 + i] = ((!gamestates.playerstate == BLACK) ? BLACKCHESS : WHITECHESS);
             if (chainjudge(chessshape) == -1)
             {
-                // if (checkempty(x, y, mode, i) <= 1)
-                //{
                 count = count + 1;
-                //}
             }
             chessshape[mode * 9 + i] = EMPTY;
         }

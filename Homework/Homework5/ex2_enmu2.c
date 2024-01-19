@@ -10,7 +10,7 @@ enum escapes
 };
 int main()
 {
-    enum escapes, be, ba, ta, ne, vt, re;
+    enum escapes be, ba, ta, ne, vt, re;
     be = BELL;
     ba = BACKSPACE;
     ta = TAB;

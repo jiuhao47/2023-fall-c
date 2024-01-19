@@ -36,20 +36,33 @@ void displaychessshape(int *Board, int L, int M)
     {
         for (int j = 0; j < M; j++)
         {
-            printf("%3d", Board[i * M + j]);
+            printf("%11d", Board[i * M + j]);
         }
         printf("\n");
     }
 }
 
-void statedisplay(int *chessshape)
+int mypow(int x, int n)
 {
-    // displaychessshape(chessshape[0], DIRECTION, 9);
-    printf("\n");
-    displaychessshape(arrayForInnerBoardLayout[0], SIZE, SIZE);
+    int temp = 1;
+    for (int i = 0; i < n; i++)
+    {
+        temp = temp * x;
+    }
+    return temp;
 }
 
-void buildlist(struct scoreRef *plist)
+int weight(int x, int y)
 {
-    if(plist==NULL)
+    return 7 - mymax(myabs(x - 7), myabs(y - 7));
+}
+
+int mymax(int x, int y)
+{
+    return (x > y) ? x : y;
+}
+
+int myabs(int x)
+{
+    return (x >= 0) ? x : ((-1) * x);
 }

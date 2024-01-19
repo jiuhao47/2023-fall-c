@@ -13,7 +13,7 @@ int trim(char s[])
     int n;
     for (n = strlen(s) - 1; n >= 0; n--)
     {
-        if (s[n] !=''&& s[n] != '\t' && s[n] != '\n')
+        if (s[n] != ' ' && s[n] != '\t' && s[n] != '\n')
         {
             break;
         }

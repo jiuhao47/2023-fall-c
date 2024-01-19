@@ -139,19 +139,19 @@ CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge.c.s: c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge.c -o CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge.c.s
 
-CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.o: CMakeFiles/gobang.dir/flags.make
-CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.o: /mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c
-CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.o: CMakeFiles/gobang.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.o -MF CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.o.d -o CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.o -c /mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c
+CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.o: CMakeFiles/gobang.dir/flags.make
+CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.o: /mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c
+CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.o: CMakeFiles/gobang.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.o -MF CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.o.d -o CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.o -c /mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c
 
-CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c > CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.i
+CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c > CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.i
 
-CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c -o CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.s
+CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c -o CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.s
 
 CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/main.c.o: CMakeFiles/gobang.dir/flags.make
 CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/main.c.o: /mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/main.c
@@ -202,7 +202,7 @@ gobang_OBJECTS = \
 "CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/functions.c.o" \
 "CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/inputprocess.c.o" \
 "CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge.c.o" \
-"CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.o" \
+"CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.o" \
 "CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/main.c.o" \
 "CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/player.c.o" \
 "CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/state.c.o"
@@ -215,7 +215,7 @@ gobang: CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/ches
 gobang: CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/functions.c.o
 gobang: CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/inputprocess.c.o
 gobang: CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge.c.o
-gobang: CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.o
+gobang: CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.o
 gobang: CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/main.c.o
 gobang: CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/player.c.o
 gobang: CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/state.c.o

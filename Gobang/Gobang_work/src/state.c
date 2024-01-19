@@ -74,26 +74,29 @@ void InfoDisplay(void)
 
 void ErrorHandle(void)
 {
+    int preState;
     // inputprocess()
     if ((pos.x < 1) || (pos.x > SIZE) || (pos.y < 0) || (pos.y > SIZE - 1))
     {
         printf(ERROR_OUT_OF_RANGE);
+        preState = gamestates.runningstate;
         gamestates.runningstate = -1;
         inputprocess_manual();
-        gamestates.runningstate = 1;
+        gamestates.runningstate = preState;
     }
     if (arrayForInnerBoardLayout[SIZE - pos.x][pos.y] != 0)
     {
         printf(ERROR_ALREDY_HAVE);
+        preState = gamestates.runningstate;
         gamestates.runningstate = -1;
         inputprocess_manual();
-        gamestates.runningstate = 1;
+        gamestates.runningstate = preState;
     }
 }
 
 void winHandle(int check)
 {
-    if (check == 1)
+    if ((check == 1) || ((check == 2) && (!gamestates.playerstate == WHITE)))
     {
         printf(WININFO, (!gamestates.playerstate == BLACK) ? BLACKNAME : WHITENAME);
         gamestates.runningstate = 0;

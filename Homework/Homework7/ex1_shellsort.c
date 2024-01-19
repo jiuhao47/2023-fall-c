@@ -1,10 +1,10 @@
-#include <stido.h>
+#include <stdio.h>
 int shellsort(int s[], int len);
 int main()
 {
     return 0;
 }
-int shellsort(int s[])
+int shellsort(int s[], int len)
 {
     int i, j, gap;
     int temp;

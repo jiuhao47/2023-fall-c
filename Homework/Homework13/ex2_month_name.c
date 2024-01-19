@@ -12,7 +12,7 @@ int main()
 }
 char *month_name(int n)
 {
-    static char *name[]{
+    static char *name[] = {
         "Illegal month",
         "January",
         "February",

@@ -6,29 +6,28 @@ int main()
 	int c;
 	int nl;
 	int nc;
-	nc=nl=nw=0;
-	state=0;
-	while((c=getchar())!=EOF)
+	nc = nl = nw = 0;
+	state = 0;
+	while ((c = getchar()) != EOF)
 	{
 		++nc;
-		if (c=='\n')
+		if (c == '\n')
 		{
 			++nl;
 		}
-		if (c==' '||c=='\t'||c=='\n')
+		if (c == ' ' || c == '\t' || c == '\n')
 		{
-			state=0;
+			state = 0;
 		}
 		else
 		{
-			if (state==0)
+			if (state == 0)
 			{
 				++nw;
-				state=1;
+				state = 1;
 			}
 		}
 	}
-	printf("\nThe amount of characters/lines/words is :%d,%d,%d\n",nc,nl,nw);
+	printf("\nThe amount of characters/lines/words is :%d,%d,%d\n", nc, nl, nw);
 	return 0;
-	
 }

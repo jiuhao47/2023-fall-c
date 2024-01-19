@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #define STRINGLEN 100
-#define ARRAYLEN
+#define ARRAYLEN 100
 
 typedef char *String;
 typedef String StringArray[ARRAYLEN];

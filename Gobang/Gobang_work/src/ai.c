@@ -1,50 +1,32 @@
 #include "head.h"
 struct Treenode *scoreRoot[SIZE][SIZE];
-int evolveLayers;
+struct Treenode *scoreRoot_oppo_temp[SIZE][SIZE];
+struct Treenode *scoreRoot_depth_temp[SIZE][SIZE];
+struct Treenode *root = NULL;
+struct Treenode *root_temp = NULL;
+int arrayForInnerBoardForScore[SIZE][SIZE];
 
-void init_scoreRoot(void)
+void updateInnerBoardForScore(void)
 {
-    for (int i = 0; i < SIZE; i++)
-    {
-        for (int j = 0; j < SZIE; j++)
-        {
-            scoreRoot[i][j] = NULL;
-        }
-    }
-}
-
-void buildtree(void)
-{
-    evolveLayers = 0;
     for (int i = 0; i < SIZE; i++)
     {
         for (int j = 0; j < SIZE; j++)
         {
-            // addSon(score, i, j, scoreRoot[i][j]);
+            arrayForInnerBoardForScore[i][j] = arrayForInnerBoardLayout[i][j];
         }
     }
 }
-
-void evolve(void)
+void init_scoreRoot(struct Treenode **scoreRoot)
 {
-    if (evolveLayers < MAXEVOLVELAYERS)
+    for (int i = 0; i < SIZE; i++)
     {
-        evolveLayers = evolveLayers + 1;
-        for (int i = 0; i < SIZE; i++)
+        for (int j = 0; j < SIZE; j++)
         {
-            for (int j = 0; j < SIZE; j++)
-            {
-
-                // addSon(score, i, j, scoreRoot[i][j]);
-            }
+            scoreRoot[i * SIZE + j] = NULL;
         }
-        evolve();
-    }
-    else
-    {
-        return;
     }
 }
+
 // 先生成0层兄弟下的二叉树，然后统计每棵树的权，然后按照权排序添加兄弟
 
 // 必须有一个节点后才能添加兄弟
@@ -53,33 +35,56 @@ void addBrother(int score, int x, int y, struct Treenode *root)
     struct Treenode *new;
     new = talloc();
     new->brother = new->son = NULL;
-    new->depth = root->depth;
     new->x = x;
     new->y = y;
-    new->score = socre;
+    new->alpha = INVINF;
+    new->beta = POSINF;
     treeBrotherSort(root, new);
 }
-
-void treeBrotherSort(struct Treenode *root, struct Treenode *new)
+/*
+struct Treenode *treeBrotherSort(struct Treenode *root, struct Treenode *new)
 {
+    struct Treenode *temp_pre;
+    struct Treenode *temp_root;
+    temp_root = root;
     if (root == NULL)
     {
-        root->brother = new;
+        root = new;
+        new->brother = NULL;
+        return root;
     }
-    else if (root->score < new->score)
+    while ((new->score <= temp_root->score) && (temp_root->brother != NULL))
     {
-        new->brother = root;
+        temp_pre = temp_root;
+        temp_root = temp_pre->brother;
+    }
+
+    if (new->score > temp_root->score)
+    {
+        if (temp_root == root)
+        {
+            root = new;
+            new->brother = temp_root;
+        }
+        else
+        {
+            temp_pre->brother = new;
+            new->brother = temp_root;
+        }
     }
     else
     {
-        treeBrotherSort(root->brother, new);
+        temp_root->brother = new;
+        new->brother = NULL;
     }
+    return root;
 }
-void addSon(int score, int x, int y, struct Treenode *root)
+*/
+struct Treenode *addSon(int alpha, int beta, int x, int y, struct Treenode *root)
 {
-
     if (root == NULL)
     {
+        root = talloc();
         root->depth = 0;
         root->x = x;
         root->y = y;
@@ -88,19 +93,34 @@ void addSon(int score, int x, int y, struct Treenode *root)
     }
     else
     {
+        struct Treenode *temp = root;
+        while (temp->son != NULL)
+        {
+            temp = temp->son;
+        }
         struct Treenode *new;
         new = talloc();
         new->brother = new->son = NULL;
         new->score = score;
-        new->depth = root->depth + 1;
+        new->depth = temp->depth + 1;
         new->x = x;
         new->y = y;
-        root->son = new;
+        temp->son = new;
     }
+    return root;
+}
+struct Treenode *freeTree_a(struct Treenode *root)
+{
+    if (root == NULL)
+    {
+        return root;
+    }
+    freeTree_a(root->brother);
+    freeTree_a(root->son);
+    free(root);
 }
 struct Treenode *treeupdate(struct Treenode *root)
 {
-
     if (root != NULL)
     {
         struct Treenode *temp = root;
@@ -114,52 +134,95 @@ struct Treenode *treeupdate(struct Treenode *root)
         return NULL;
     }
 }
-void depthupdate(struct Treenode *root)
-{
-
-    if (root != NULL)
-    {
-        root->depth = root->depth - 1;
-        depthupdate(root->brother);
-        depthupdate(root->son);
-    }
-    else
-    {
-        return;
-    }
-}
-void freeTree(struct Treenode *brother)
-{
-    if (brother != NULL)
-    {
-        freeTree(brother->son);
-        freeTree(brother->brother);
-        free(brother);
-    }
-    else
-    {
-        return;
-    }
-}
 void getbrotherScore(struct Treenode *root)
 {
-    root->score = sontreeScoreSum(root->son);
-}
-int sontreeScoreSum(struct Treenode *son)
-{
-    int temp = 0;
-    if (son != NULL)
-    {
-        temp = son->score + sontreeScoreSum(son->son) + sontreeScoreSum(son->brother);
-    }
-    return temp;
+    // if (root != NULL)
+    //  判断条件为避免空指针调用临时添加，可以删除寻找原因
+    root->score = root->score + sontreeScoreSum(root->son);
 }
 struct Treenode *talloc(void)
 {
     return (struct Treenode *)malloc(sizeof(struct Treenode));
 }
+/*
+void evolve(struct Treenode **scoreRoot)
+{
+    int kill_mine = 0;
+    int kill_oppo = 0;
+    int score = 0;
+    int score_mine = 0;
+    int score_oppo = 0;
+    updateInnerBoardForScore();
+    for (int i = 0; i < SIZE; i++)
+    {
+        for (int j = 0; j < SIZE; j++)
+        {
+            if (arrayForInnerBoardForScore[i][j] == EMPTY)
+            {
+                arrayForInnerBoardForScore[i][j] = (!gamestates.playerstate == BLACK) ? BLACKCHESS : WHITECHESS;
+                score_mine = judge_score(SIZE - i, j, arrayForInnerBoardForScore[0]);
+                kill_mine = (score_mine >= P_DIRECTFOUR) ? 5 : 1;
+                arrayForInnerBoardForScore[i][j] = EMPTY;
+                gamestates.playerstate = !gamestates.playerstate;
+                arrayForInnerBoardForScore[i][j] = (!gamestates.playerstate == BLACK) ? BLACKCHESS : WHITECHESS;
+                score_oppo = judge_score(SIZE - i, j, arrayForInnerBoardForScore[0]);
+                kill_oppo = (score_oppo >= P_DIRECTFOUR) ? 5 : 1;
+                gamestates.playerstate = !gamestates.playerstate;
+                score = score_mine * kill_mine + score_oppo * kill_oppo;
+                scoreRoot[i * SIZE + j] = addSon(score, i, j, scoreRoot[i * SIZE + j]);
+                arrayForInnerBoardForScore[i][j] = EMPTY;
+            }
+            else
+            {
+                score = OCCUPIED;
+                if ((scoreRoot[i * SIZE + j] == NULL) || (scoreRoot[i * SIZE + j]->score > 0))
+                    scoreRoot[i * SIZE + j] = addSon(score, i, j, scoreRoot[i * SIZE + j]);
+            }
+        }
+    }
+}
+*/
+/*
+struct Treenode *collect(struct Treenode *root, struct Treenode **scoreRoot)
+{
+    for (int i = 0; i < SIZE; i++)
+    {
+        for (int j = 0; j < SIZE; j++)
+        {
+            getbrotherScore(scoreRoot[i * SIZE + j]);
+            scoreRoot[i * SIZE + j]->score = scoreRoot[i * SIZE + j]->score + weight(i, j);
 
-int ai(void)
+            root = treeBrotherSort(root, scoreRoot[i * SIZE + j]);
+        }
+    }
+    return root;
+}
+*/
+int ai_tree(void)
+{
+    gamestates.playerstate = !gamestates.playerstate;
+    printf("Playerstates=%d\n", gamestates.playerstate);
+
+    init_scoreRoot(scoreRoot[0]);
+    evolve(scoreRoot[0]);
+    root = collect(root, scoreRoot[0]);
+
+    for (int i = 0; i < SIZE; i++)
+    {
+        for (int j = 0; j < SIZE; j++)
+        {
+            printf("%10d ", scoreRoot[i][j]->score);
+        }
+        printf("\n");
+    }
+    // SIZE-这里优化会出bug，回头修一下
+    pos.x = SIZE - root->x;
+    pos.y = root->y;
+    freeTree_a(root);
+    ai_input(SIZE - pos.x, pos.y);
+}
+
+int ai_random(void)
 {
     pos.x = rand() % SIZE + 1;
     pos.y = rand() % SIZE;
@@ -169,24 +232,9 @@ int ai(void)
 
 void ai_input(int x, int y)
 {
-    gamestates.playerstate = !gamestates.playerstate;
-    arrayForInnerBoardLayout[SIZE - x][y] = (!gamestates.playerstate == BLACK) ? BLACKCHESSCURRENT : WHITECHESSCURRENT;
+    arrayForInnerBoardLayout[x][y] = (!gamestates.playerstate == BLACK) ? BLACKCHESSCURRENT : WHITECHESSCURRENT;
 }
-
-void socre(void)
+void ai_input_clear(int x, int y)
 {
-    evolveLayers = 0;
-    if (evolveLayers < MAXEVOLVELAYERS)
-    {
-        evolveLayers = evolveLayers + 1;
-        for (int i = 0; i < SIZE; i++)
-        {
-            for (int j = 0; j < SIZE; j++)
-            {
-                if (arrayForInnerBoardLayout[i][j] == EMPTY)
-                {
-                }
-            }
-        }
-    }
+    arrayForInnerBoardLayout[x][y] = EMPTY;
 }

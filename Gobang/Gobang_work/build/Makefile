@@ -249,29 +249,29 @@ mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gobang.dir/build.make CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge.c.s
 .PHONY : mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge.c.s
 
-mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.o: mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.o
-.PHONY : mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.o
+mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.o: mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.o
+.PHONY : mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.o
 
 # target to build an object file
-mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gobang.dir/build.make CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.o
-.PHONY : mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.o
+mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gobang.dir/build.make CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.o
+.PHONY : mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.o
 
-mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.i: mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.i
-.PHONY : mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.i
+mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.i: mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.i
+.PHONY : mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.i
 
 # target to preprocess a source file
-mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gobang.dir/build.make CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.i
-.PHONY : mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.i
+mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gobang.dir/build.make CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.i
+.PHONY : mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.i
 
-mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.s: mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.s
-.PHONY : mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.s
+mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.s: mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.s
+.PHONY : mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.s
 
 # target to generate assembly for a file
-mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gobang.dir/build.make CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.s
-.PHONY : mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.s
+mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gobang.dir/build.make CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.s
+.PHONY : mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.s
 
 mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/main.o: mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/main.c.o
 .PHONY : mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/main.o
@@ -369,9 +369,9 @@ help:
 	@echo "... mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge.o"
 	@echo "... mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge.i"
 	@echo "... mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge.s"
-	@echo "... mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.o"
-	@echo "... mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.i"
-	@echo "... mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.s"
+	@echo "... mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.o"
+	@echo "... mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.i"
+	@echo "... mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.s"
 	@echo "... mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/main.o"
 	@echo "... mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/main.i"
 	@echo "... mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/main.s"

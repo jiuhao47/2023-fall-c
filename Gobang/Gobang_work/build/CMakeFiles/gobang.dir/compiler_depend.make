@@ -306,7 +306,7 @@ CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge.c.o: /
   /usr/include/alloca.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h
 
-CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c.o: /mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c \
+CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c.o: /mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c \
   /usr/include/stdc-predef.h \
   /mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/inc/head.h \
   /usr/include/ctype.h \
@@ -553,7 +553,7 @@ CMakeFiles/gobang.dir/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/state.c.o: /
 
 /mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/player.c:
 
-/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_socre.c:
+/mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge_score.c:
 
 /mnt/hgfs/UbuntuShare/C/Gobang/Gobang_work/src/judge.c:
 

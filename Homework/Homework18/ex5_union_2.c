@@ -9,7 +9,7 @@ union u_tag
 
 int main()
 {
-    union utag b, *p;
+    union u_tag b, *p;
     a.fval = 1.0;
     p = &a;
     printf("(*p).fval:%f\n", (*p).fval);

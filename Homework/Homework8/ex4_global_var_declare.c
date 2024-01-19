@@ -4,7 +4,7 @@ int main()
 {
     void sub1();
     void sub2();
-    extern in exvar;
+    extern int exvar;
     exvar = 100;
     sub1();
     printf("After sub1, exvar=%d\n", exvar);

@@ -8,7 +8,7 @@ int main()
     a + b;
     a += c;
     a++;
-    a, b, c, ;
+    a, b, c;
     ;
     a += a, b, c++;
     printf("a=%d b=%d c=%d\n", a, b, c);

@@ -5,4 +5,4 @@ struct point makepoint(double x, double y)
     temp.x = x;
     temp.y = y;
     return temp;
-}
+};

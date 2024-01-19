@@ -51,6 +51,7 @@ int decide(int x)
 	{
 		if (c == i)
 		{
+			;
 		}
 		else
 		{

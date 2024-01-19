@@ -4,7 +4,7 @@ int main()
     int c, i, nwhite, nother, ndigit[10];
     nwhite = nother = 0;
     for (i = 0; i < 10; i++)
-        ndigitpi = 0;
+        ndigit[i] = 0;
     while ((c = getchar()) != EOF)
     {
         switch (c)
@@ -21,7 +21,7 @@ int main()
         case '9':
             ndigit[c - '0']++;
             break;
-        case '':
+        case ' ':
         case '\t':
         case '\n':
             nwhite++;
